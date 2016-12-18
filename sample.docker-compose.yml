@@ -1,0 +1,10 @@
+jenkins:
+  image: jenkins
+  expose:
+    - 8080
+    - 50000
+  environment:
+    - "VIRTUAL_HOST=jenkins.grassy.com"
+    - "VIRTUAL_PORT=8080"
+  volumes:
+    - "./data:/var/jenkins_home"
