@@ -71,13 +71,30 @@ Under Anonymous user->job check read (view before?!?) status.
 ## Free-style project Node JS
 Select "New item", enter a name, choose "Freestyle project" and then hit OK.
 
-Under project configuration page head to Source Code Managment and select git. Enter git
+Go to "Configure" 
+
+Under "Source Code Managment" check "Git". Enter git
 repository url and credentials (credentials need to be a user/password type).
 
-Unded "Build Triggers" check "Build when a change is pushed to GitHub"
+Under "Build Triggers" check "Build when a change is pushed to GitHub"
 
 Under "Build Environment" check "Provide Node & npm bin/folder to PATH and choose your nore installtion
 
-### TAP build status
+### TAP build status and Clover coverage report with hapijs lab
 
-### Clover coverage report
+In your package,json add
+
+```js
+"scripts": {
+    "test-jenkins": "node_modules/.bin/lab -m 10000 -r tap -o test.tap -r clover -o clover.xml"
+}
+```
+Then in jenkins got to "Configure" -> "Build" -> "Add build step" -> "Excecute in shell" and past:
+
+```shell
+npm install
+npm run test-jenkins || :
+```
+
+
+
