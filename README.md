@@ -44,9 +44,9 @@ of repo hooks.
 * repo - to see private repos
 * repo:status - to manipulate commit statuses
 
-
-Go to "Manage Jenkins" -> "Configure System". First scroll down to Jenkins locatin and ensure it is the url of the
-jenkins server. Then scroll down to GitHub and click add GitHub server. 
+Go to "Manage Jenkins" -> "Configure System". First scroll down to Jenkins locatin and ensure it is the http url of the
+jenkins server (needs to be http since Lets encryp certidicate at this moment do not pass all githubs tests). 
+Then scroll down to GitHub and click add GitHub server.  
 
 In your github account go to "Settings"->"Personal access tokens", generate an token and copy token.
 
@@ -76,9 +76,12 @@ Go to "Configure"
 Under "Source Code Managment" check "Git". Enter git
 repository url and credentials (credentials need to be a user/password type).
 
-Under "Build Triggers" check "Build when a change is pushed to GitHub"
+Under "Build Triggers" check "Build when a change is pushed to GitHub". OBS if
+you need to delete the webhook on git to generate a new since you change e.g. the url of the jenins server 
+just uncheck->apply->check->apply 
 
-Under "Build Environment" check "Provide Node & npm bin/folder to PATH and choose your nore installtion
+
+Under "Build Environment" check "Provide Node & npm bin/folder to PATH and choose your nore installtion. 
 
 ### TAP build status and Clover coverage report with hapijs lab
 
