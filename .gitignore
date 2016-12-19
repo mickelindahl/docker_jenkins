@@ -1,2 +1,5 @@
 # docker-compose
 docker-compose.yml
+
+# data folder
+data/
