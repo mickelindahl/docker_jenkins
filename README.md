@@ -17,12 +17,15 @@ for more details on this.
 
 ### Plugins 
 
+Required
 * GitHub  Plugin
+* NodeJS Plugin
+
+Optional
 * Clover Plugin
 * Checkstyle Plug-in
 * TAP Plugin
 * Embeddable Build Status PLugin
-* NodeJS Plugin
 
 Older versions of plugins can be manually installed.
 
@@ -66,7 +69,7 @@ at the bottom of the page.
 Go to Manage jenkins->Configure Global Security and choose Project-based Matrix Authorization Strategy.
 Under Anonymous user->job check view status.
   
-### Add node JS
+## Free-style project Node JS
 Select new item and build a free-style software project
 
 Under project configuration page head to Source Code Managment and select git. Enter git
