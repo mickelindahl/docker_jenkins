@@ -13,7 +13,7 @@ Run `docker-compose up -d`
 
 ## Setting up Jenkins to build NodeJS
 See NodeJS CI tutorial [part 1](https://strongloop.com/strongblog/roll-your-own-node-js-ci-server-with-jenkins-part-1/) and [part 2](https://strongloop.com/strongblog/roll-your-own-node-js-ci-server-with-jenkins-part-2/) 
-for more details on this. 
+for the inspiration to this.  
 
 ### Plugins 
 
