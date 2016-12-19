@@ -22,7 +22,7 @@ Required
 * NodeJS Plugin
 
 Optional
-* Clover Plugin
+* Clover Plugin (OBS 4.7 broken choose 4.6 instead)
 * Checkstyle Plug-in
 * TAP Plugin
 * Embeddable Build Status PLugin
@@ -95,6 +95,13 @@ Then in jenkins got to "Configure" -> "Build" -> "Add build step" -> "Excecute i
 npm install
 npm run test-jenkins || :
 ```
+
+Then goto "Post-build Actions" -> "Add post-build action" and choose  "Publish TAP Results" and "Publish Clover Coverage Report"
+
+In "Publish TAP Results" -> "Test results" write test.tap
+
+Hit save and try it out with "Build now"!
+
 
 
 
