@@ -30,8 +30,8 @@ Optional
 Older versions of plugins can be manually installed.
 
 ### Security
-Go to Manage jenkins->Configure Global Security and choose Project-based Matrix Authorization Strategy.
-Add you user and check admin.
+Go to "Manage jenkins" -> "Configure Global Security", choose "Project-based Matrix Authorization Strategy".
+and then add you user and check admin.
 
 ### Github webhok
 Please check [Githu plugin](https://wiki.jenkins-ci.org/display/JENKINS/GitHub+plugin) for 
