@@ -49,10 +49,14 @@ Have to confirm that they are needed
 * user - 
 
 
-Go to Configure System, scroll down to GitHub and click add GitHub server. 
 
-Click add credentials->jenkins (the scope), choose kind  <<sercet text>> and past token value. Type in
-a suitable name (gitub private token) in ID and description (Credentials can also be 
+Go to "Manage Jenkins" -> "Configure System". First scroll down to Jenkins locatin and ensure it is the url of the
+jenkins server. Then scroll down to GitHub and click add GitHub server. 
+
+In your github account go to "Settings"->"Personal access tokens", generate an token and copy token.
+
+Click "Add credentials" -> "jenkins" (the scope), choose kind  <<sercet text>> and past token value. Type in
+a suitable ID and description (Credentials can also be 
 added at main page. There can additional scopes also be created).
 
 Test connection. If ok scroll to bottom and hit save.    
