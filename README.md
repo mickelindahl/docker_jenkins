@@ -66,7 +66,7 @@ at the bottom of the page.
 
 ### Build badges
 Go to Manage jenkins->Configure Global Security and choose Project-based Matrix Authorization Strategy.
-Under Anonymous user->job check view status.
+Under Anonymous user->job check read (view before?!?) status.
   
 ## Free-style project Node JS
 Select new item and build a free-style software project
