@@ -43,11 +43,6 @@ of repo hooks.
 * admin:repo_hook - for managing hooks (read, write and delete old ones)
 * repo - to see private repos
 * repo:status - to manipulate commit statuses
-From other [NodeJS CI tutorial](https://strongloop.com/strongblog/roll-your-own-node-js-ci-server-with-jenkins-part-1/). 
-Have to confirm that they are needed 
-* gist - ?
-* user - 
-
 
 
 Go to "Manage Jenkins" -> "Configure System". First scroll down to Jenkins locatin and ensure it is the url of the
