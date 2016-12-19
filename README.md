@@ -59,9 +59,9 @@ Test connection. If ok scroll to bottom and hit save.
 ### Node JS
 Ensure that Node JS plugin is installed.
 
-Under Manage jenkins and then Global Tool Configuration scroll down to Node JS.
+Under "Manage Jenkins" -> "Global Tool Configuration" scroll down to Node JS.
 
-Click add NodeJS. Type in name, mark Install automatically, choose node version and hit save
+Click add "Add NodeJS", type in name, mark "Install automatically", choose node version and hit save
 at the bottom of the page.
 
 ### Build badges
