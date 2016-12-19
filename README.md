@@ -11,7 +11,7 @@ Run `cp sample.docker-compose.yml doker-compose.yml`
 
 Run `docker-compose up -d` 
 
-## Setting up jenkins to build NodeJS
+## Setting up Jenkins to build NodeJS
 See NodeJS CI tutorial [part 1](https://strongloop.com/strongblog/roll-your-own-node-js-ci-server-with-jenkins-part-1/) and [part 2](https://strongloop.com/strongblog/roll-your-own-node-js-ci-server-with-jenkins-part-2/) 
 for more details on this. 
 
@@ -69,12 +69,14 @@ Go to Manage jenkins->Configure Global Security and choose Project-based Matrix 
 Under Anonymous user->job check read (view before?!?) status.
   
 ## Free-style project Node JS
-Select new item and build a free-style software project
+Select "New item", enter a name, choose "Freestyle project" and then hit OK.
 
 Under project configuration page head to Source Code Managment and select git. Enter git
 repository url and credentials (credentials need to be a user/password type).
 
-Unde build triggers check build when a change is pushed to github
+Unded "Build Triggers" check "Build when a change is pushed to GitHub"
+
+Under "Build Environment" check "Provide Node & npm bin/folder to PATH and choose your nore installtion
 
 ### TAP build status
 
