@@ -1,5 +1,6 @@
 jenkins:
   image: jenkins
+  container_name: jenkins
   expose:
     - 8080
     - 50000

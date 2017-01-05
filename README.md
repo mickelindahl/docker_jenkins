@@ -5,9 +5,10 @@ Docker jenkins
 
 Clone repository and cd into app directory
 
-Run `mkdir data` and `chmod 777 data`
+Run `mkdir data && chmod 777 data`
 
-Run `cp sample.docker-compose.yml doker-compose.yml`
+Run `cp sample.docker-compose.yml doker-compose.yml` and add your 
+domain/subdomain to VIRTUAL_HOST
 
 Run `docker-compose up -d` 
 
