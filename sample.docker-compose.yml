@@ -7,5 +7,6 @@ jenkins:
   environment:
     - "VIRTUAL_HOST=jenkins.grassy.com"
     - "VIRTUAL_PORT=8080"
+    - "HTTPS_METHOD=noredirect" # Github webook needs http 
   volumes:
     - "./data:/var/jenkins_home"
