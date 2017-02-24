@@ -4,7 +4,7 @@ Docker jenkins
 Docker compose file for installing [jenkins](https://jenkins.io/) in a docker container
 based on [docker jenkins image](https://hub.docker.com/_/jenkins/).
 
-- NOTE! /tmp can become full. It is where temporary files from npm is downloaded and stored during installation
+- NOTE! /tmp inside the container (maybe a container only can be 10 GB in default) can become full. It is where temporary files from npm is downloaded and stored during installation
 
 ## Installation
 
