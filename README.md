@@ -35,7 +35,7 @@ Run
 ## Backing up date
 docker cp $VOLUME_ID:/var/jenkins_home
 
-## Installing docker
+## Install docker
 
 Reference: [install docker](https://docs.docker.com/engine/installation/linux/debian/#prerequisites)
 
@@ -73,5 +73,18 @@ docker-compose restart
 ```
 
 Done!
+
+## Install docker compose
+
+Reference: 
+
+Login as root to your docker conatiner
+```
+docker exec -it -u root jenkins /bin/bash 
+```
+Then run
+``´
+curl -L "https://github.com/docker/compose/releases/download/1.11.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+```
 
 
