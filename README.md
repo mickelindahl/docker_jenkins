@@ -65,4 +65,13 @@ socked to the container.
 ```
  volumes:
    - "/var/run/docker.sock:/var/run/docker.sock"
-``´
+```
+
+Finally restart your jenkins container to ensurra that usermod will take effect
+```
+docker-compose restart
+```
+
+Done!
+
+
