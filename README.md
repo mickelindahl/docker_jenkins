@@ -34,3 +34,43 @@ Run
 
 ## Backing up date
 docker cp $VOLUME_ID:/var/jenkins_home
+
+## Installing docker
+
+Reference: [install docker](https://docs.docker.com/engine/installation/linux/debian/#prerequisites)
+
+Login as root to your docker conatiner
+```
+docker exec -it -u root jenkins /bin/bash 
+```
+
+Then install docker 
+```
+apt-get install \
+     apt-transport-https \
+     ca-certificates \
+     curl \
+     python-software-properties
+
+curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - 
+add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/debian \
+   $(lsb_release -cs) \
+   stable"
+apt-get update
+apt-get install docker-ce
+```
+
+Then add jenkins to docker group such that jenkins can manage docker
+
+```
+usermod -aG docker jenkins
+`´´
+
+Ensure that the `docker-compose.yml` file maps the host docker 
+socked to the container.
+
+```
+ volumes:
+   - "/var/run/docker.sock:/var/run/docker.sock"
+``´
