@@ -76,7 +76,7 @@ Done!
 
 ## Install docker compose
 
-Reference: 
+Reference: [install docker compose](https://docs.docker.com/compose/install/)
 
 Login as root to your docker conatiner
 ```
