@@ -10,7 +10,11 @@ based on [docker jenkins image](https://hub.docker.com/_/jenkins/).
 
 Clone repository and cd into app directory
 
-Run `mkdir data && chmod 777 data`
+Run `mkdir data && chmod 777 data`sudo 
+
+Run `chown -R 1000:1000 data` # Bacause jenkins will be user 1000 in the container
+
+
 
 Run `cp sample.docker-compose.yml doker-compose.yml` and add your 
 domain/subdomain to VIRTUAL_HOST
