@@ -10,3 +10,4 @@ jenkins:
     - "HTTPS_METHOD=noredirect" # Github webook needs http 
   volumes:
     - "./data:/var/jenkins_home"
+  restart: always
