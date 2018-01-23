@@ -1,13 +1,21 @@
-jenkins:
-  image: jenkins
-  container_name: jenkins
-  expose:
-    - 8080
-    - 50000
-  environment:
-    - "VIRTUAL_HOST=jenkins.grassy.com"
-    - "VIRTUAL_PORT=8080"
-    - "HTTPS_METHOD=noredirect" # Github webook needs http 
-  volumes:
-    - "./data:/var/jenkins_home"
-  restart: always
+version: "3"
+
+services:
+  jenkins:
+    build: 
+      context: .
+    #image: jenkins:2.60.2
+    container_name: jenkins-old-2.60.2
+    expose:
+      - 8080
+      - 50000
+    environment:
+      - "VIRTUAL_HOST=jenkins.grassy.se"
+      - "VIRTUAL_PORT=8080"
+      - "HTTPS_METHOD=noredirect"
+#      - "JAVA_OPTS=-Dhudson.model.DirectoryBrowserSupport.CSP="
+    volumes:
+      - "/opt/apps/jenkins_old/data:/var/jenkins_home"
+      - "/var/run/docker.sock:/var/run/docker.sock" 
+    restart: always
+    network_mode: "bridge"    

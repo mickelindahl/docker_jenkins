@@ -1,5 +1,5 @@
-# docker-compose
-docker-compose.yml
+# No jenkins data
+data
 
-# data folder
-data/
+# No compose file
+docker-compose.yml

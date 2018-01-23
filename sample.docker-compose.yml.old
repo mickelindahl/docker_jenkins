@@ -1,0 +1,13 @@
+jenkins:
+  image: jenkins
+  container_name: jenkins
+  expose:
+    - 8080
+    - 50000
+  environment:
+    - "VIRTUAL_HOST=jenkins.grassy.se"
+    - "VIRTUAL_PORT=8080"
+    - "HTTPS_METHOD=noredirect" # Github webook needs http 
+  volumes:
+    - "/opt/apps/jenkins/data:/var/jenkins_home"
+  restart: always
