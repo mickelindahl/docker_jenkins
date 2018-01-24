@@ -14,8 +14,6 @@ Run `mkdir data && chmod 777 data`sudo
 
 Run `chown -R 1000:1000 data` # Bacause jenkins will be user 1000 in the container
 
-
-
 Run `cp sample.docker-compose.yml doker-compose.yml` and add your 
 domain/subdomain to VIRTUAL_HOST
 
@@ -24,6 +22,23 @@ Run `docker-compose up -d`
 Open jenkins and follow instructions
 
 Done :-)
+
+## Configure jenkins
+
+### Publish over ssh
+
+Step 1, generate public and private key on build server as user jenkins
+
+Run `cat .ssh/id_rsa.pub`
+
+Step 2, create `authorized_keys` in `.ssh/` paste the pub file contents. Then make sure  
+`authorized_keys` has permission 644 and `.ssh/` has 700
+
+Step 3, configure Jenkins
+OBS it is contetn of id_rsa not id_rsa.pub now
+* In the jenkins web control panel, nagivate to "Manage Jenkins" -> "Configure System" -> "Publish over SSH"
+* Either enter the path of the file e.g. "var/lib/jenkins/.ssh/id_rsa", or paste in the same content as on the target server.
+* Enter your passphrase, server and user details, and you are good to go!
 
 ## Upgrading
 
