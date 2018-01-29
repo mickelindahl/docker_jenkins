@@ -40,6 +40,11 @@ OBS it is contetn of id_rsa not id_rsa.pub now
 * Either enter the path of the file e.g. "var/lib/jenkins/.ssh/id_rsa", or paste in the same content as on the target server.
 * Enter your passphrase, server and user details, and you are good to go!
 
+### Bourne shell (sh) be aware
+You may be interested in the fact that the ability to source a script with arguments is a bashism. In sh or dash your main.sh will not echo anything because the arguments to the sourced script are ignored and $1 will refer to the argument to main.sh.
+
+This apllies since sh is the standard shell in jenkins. You can change the stardar shell under Manage Jenins -> Configure system -> Shell -> Shell executable
+
 ## Upgrading
 
 All the data needed is in the container `/var/jenkins_home` directory
