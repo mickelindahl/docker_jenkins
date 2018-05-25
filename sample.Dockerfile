@@ -1,5 +1,5 @@
 # only lts is supported on dockerhub https://hub.docker.com/r/jenkins/jenkins
-FROM jenkins/jenkins:2.107.3
+FROM jenkins/jenkins:{version-jenkins}
 
 COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
 RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
@@ -24,7 +24,7 @@ RUN apt-get update \
     &&  apt-get update \
     && apt-get install -y docker-ce \ 
     &&  usermod -aG docker jenkins \
-    && curl -L "https://github.com/docker/compose/releases/download/1.21.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose \
+    && curl -L "https://github.com/docker/compose/releases/download/{version-docker-compose}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose \
     && chmod +x /usr/local/bin/docker-compose
 
 USER jenkins

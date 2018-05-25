@@ -3,3 +3,5 @@ data
 
 # No compose file
 docker-compose.yml
+
+.env

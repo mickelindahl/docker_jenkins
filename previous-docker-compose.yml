@@ -4,21 +4,22 @@ services:
   jenkins:
     build: 
       context: .
-    container_name: jenkins-{version}
+#    image: jenkins:2.60.2
+    container_name: jenkins-2.89.3
     expose:
       - 8080
       - 50000
     environment:
-      - "VIRTUAL_HOST={virtual-host}"
+      - "VIRTUAL_HOST=jenkins.grassy.se"
       - "VIRTUAL_PORT=8080"
       - "HTTPS_METHOD=noredirect"
 #      - "JAVA_OPTS=-Dhudson.model.DirectoryBrowserSupport.CSP="
     volumes:
-      - home:/var/jenkins_home
-#      - "./data:/var/jenkins_home"
-      - "/var/run/docker.sock:/var/run/docker.sock" 
+      - jenkins-data:/var/jenkins_home
+#      - "/opt/apps/jenkins_old/data:/var/jenkins_home"
+#      - "/var/run/docker.sock:/var/run/docker.sock" 
     restart: always
     network_mode: "bridge"
     
 volumes:
-  home:
+  jenkins-data:

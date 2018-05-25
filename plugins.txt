@@ -1,0 +1,3 @@
+matrix-auth:latest
+blueocean:latest
+ssh-agent:latest

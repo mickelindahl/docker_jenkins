@@ -10,20 +10,17 @@ based on [docker jenkins image](https://hub.docker.com/_/jenkins/).
 
 Clone repository and cd into app directory
 
-Run `mkdir data && chmod 777 data`sudo 
+Copy sample.env to .env
 
-Run `chown -R 1000:1000 data` # Bacause jenkins will be user 1000 in the container
+`cp sample.env .env`
 
+Open `.env` and add credentials
 
+Run
 
-Run `cp sample.docker-compose.yml doker-compose.yml` and add your 
-domain/subdomain to VIRTUAL_HOST
+`./install.sh`
 
-Run `docker-compose up -d` 
-
-Open jenkins and follow instructions
-
-Done :-)
+Done!
 
 ## Upgrading
 
@@ -32,9 +29,12 @@ that is mapped to`./jenkins_app` folder in the application directory.
 This data will persist between updates since it is a 
 [volume](https://docs.docker.com/engine/tutorials/dockervolumes/)). 
 
-Open `docker-compose.yml` and enter set prefered image version.
+Open `.env` and enter set prefered image version.
 
 Run  
+
+`./install.sh`
+
 
 ## Backing up date
 docker cp $VOLUME_ID:/var/jenkins_home
