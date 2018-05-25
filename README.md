@@ -19,7 +19,7 @@ Open `.env` and add credentials
 Run
 
 `./install.sh`
-=======
+
 Run `cp sample.docker-compose.yml doker-compose.yml` and add your 
 domain/subdomain to VIRTUAL_HOST
 
@@ -27,7 +27,7 @@ Done!
 
 ## Configure jenkins
 
-### Publish over ssh
+### Use pipline ssh-agent
 
 Step 1, generate public and private key on build server as user jenkins
 
@@ -37,10 +37,16 @@ Step 2, create `authorized_keys` in `.ssh/` paste the pub file contents. Then ma
 `authorized_keys` has permission 644 and `.ssh/` has 700
 
 Step 3, configure Jenkins
-OBS it is contetn of id_rsa not id_rsa.pub now
-* In the jenkins web control panel, nagivate to "Manage Jenkins" -> "Configure System" -> "Publish over SSH"
-* Either enter the path of the file e.g. "var/lib/jenkins/.ssh/id_rsa", or paste in the same content as on the target server.
-* Enter your passphrase, server and user details, and you are good to go!
+OBS it is contetn of **id_rsa** not **id_rsa.pub** now
+* In the jenkins web control panel, nagivate to "Credentials" -> "System" -> "Global credentials (unrestricted) -> Add credentials" -> "SSH username with private key"
+* Enter username
+* Add **private key**
+* Enter `ID`, this will be used with the plugin as
+```
+sshagent(credentials: ['{ID}']) {...}
+
+```
+* save
 
 ### Bourne shell (sh) be aware
 You may be interested in the fact that the ability to source a script with arguments is a bashism. In sh or dash your main.sh will not echo anything because the arguments to the sourced script are ignored and $1 will refer to the argument to main.sh.
